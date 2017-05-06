@@ -23,7 +23,7 @@ a.active {
   outline: none;
 }
 a {
-  color: #63C2F9;
+  color: #ffffff;
 }
 a:hover,
 a:focus,
@@ -97,8 +97,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl {
   color: white;
   /*background-color: #63C2F9;*/
-  border-color: #63C2F9;
-  font-family: 'Raleway', sans-serif;
+  background-color: rgba(114, 163, 209, 0.93);
+  /*border-color: #63C2F9;*/
+  /*font-family: 'Raleway', sans-serif;*/
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 3px;
@@ -146,7 +147,7 @@ fieldset[disabled] .btn-xl.active {
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #63C2F9;
+  color: #ffffff;
   font-family: 'Raleway', sans-serif;
 }
 .navbar-custom .navbar-brand:hover,
@@ -221,7 +222,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('../img/test.jpg');
+  background-image: url('../img/keyboard2.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
