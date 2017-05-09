@@ -463,10 +463,10 @@ section h3.section-subheading {
   .timeline:before {
     left: 50%;
   }
-  .timeline > li {
+  /*.timeline > li {
     margin-bottom: 100px;
     min-height: 100px;
-  }
+  }*/
   .timeline > li .timeline-panel {
     width: 41%;
     float: left;
@@ -613,6 +613,7 @@ footer span.copyright {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   text-transform: none;
+  position: relative;
 }
 footer ul.quicklinks {
   margin-bottom: 0;
@@ -626,7 +627,7 @@ ul.social-buttons {
 }
 ul.social-buttons li a {
   display: block;
-  background-color: #222222;
+  background-color: white;
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -637,10 +638,20 @@ ul.social-buttons li a {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+#linkedin {
+  background-image: url("../img/linkedin.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#github {
   background-image: url("../img/githubLogo.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
@@ -744,10 +755,7 @@ body {
   webkit-tap-highlight-color: #63C2F9;
 }
 
-.social-buttons-hover:hover {
-  background: rgba(145, 234, 255, 0.65);
 
-}
 
 .icons {
   background-color: #63C2F9;
@@ -807,6 +815,10 @@ body {
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
+}
+
+placeholder {
+  color: black;
 }
 
 
