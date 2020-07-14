@@ -1,3 +1,4 @@
+var PLAYER_SCORE = 0;
 // Enemies our player must avoid
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
@@ -40,7 +41,9 @@ var Player = function() {
     this.x = 202;
     this.y = 564;
 };
-
+function total_score() {
+    PLAYER_SCORE += 10;
+}
 Player.prototype.update = function(dt) {
 
     var self = this;
@@ -76,19 +79,10 @@ Player.prototype.update = function(dt) {
     //if player reaches water, position reset:
     if (this.y < 0) {
         this.reset();
-    //     var PLAYER_SCORE = 0;
-    //
-    //     function total_score() {
-    //         PLAYER_SCORE += 10;
-    //     }
-    //     total_score();
-    //     document.getElementById('score').innerHTML = PLAYER_SCORE;
-    }
 
-    // //if player reaches touches fire, position reset:
-    // if(this.x < 10) {
-    //     this.reset();
-    // }
+        total_score();
+        document.getElementById('score').innerHTML = PLAYER_SCORE;
+    }
 
     allEnemies.forEach(function(enemy) {
         if (self.x >= enemy.x - 25 && self.x <= enemy.x + 25) {
