@@ -184,15 +184,14 @@ fieldset[disabled] .btn-xl.active {
   outline: none;
 }
 .navbar-custom .navbar-nav > .active > a {
-  border-radius: 0;
-  color: white;
-  background-color: #63C2F9;
+  background-color: transparent;
+  color: #63C2F9;
 }
-.navbar-custom .navbar-nav > .active > a:hover,
+/* .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: white;
   background-color: #63C2F9;
-}
+} */
 @media (min-width: 768px) {
   .navbar-custom {
     background-color: rgba(69, 69, 69, 0.42);
@@ -222,9 +221,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 header {
-  background-image: url('../img/keyboard2.jpg');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-image: url('../img/space_gif.gif');
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -233,9 +230,12 @@ header {
   text-align: center;
   color: white;
 }
+header:hover {
+  color: #63C2F9;
+}
 header .intro-text {
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 header .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -248,14 +248,14 @@ header .intro-text .intro-heading {
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   header .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
+    padding-top: 400px;
+    padding-bottom: 400px;
   }
   header .intro-text .intro-lead-in {
     font-family: 'Raleway', sans-serif;
@@ -268,7 +268,7 @@ header .intro-text .intro-heading {
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 75px;
+    font-size: 65px;
     line-height: 75px;
     margin-bottom: 50px;
   }

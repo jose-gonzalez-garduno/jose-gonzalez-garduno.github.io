@@ -5,77 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jose-gonzalez-garduno</title>
+  <title>Jose.Technology</title>
   <link rel="shortcut icon" href="favicon.ico">
 
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom Fonts -->
-
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- Theme CSS -->
   <link href="css/style.css" rel="stylesheet">
-  <script type="text/javascript">
-    var TxtType = function(el, toRotate, period) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = parseInt(period, 10) || 2000;
-      this.txt = '';
-      this.tick();
-      this.isDeleting = false;
-    };
 
-    TxtType.prototype.tick = function() {
-      var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
-
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-      }
-
-      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-      var that = this;
-      var delta = 200 - Math.random() * 100;
-
-      if (this.isDeleting) {
-        delta /= 2;
-      }
-
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
-
-      setTimeout(function() {
-        that.tick();
-      }, delta);
-    };
-
-    window.onload = function() {
-      var elements = document.getElementsByClassName('typewrite');
-      for (var i = 0; i < elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-      }
-      // INJECT CSS
-      var css = document.createElement("style");
-      css.type = "text/css";
-      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-      document.body.appendChild(css);
-    };
-  </script>
+  <!-- Theme JavaScript -->
+  <script src="js/script.js"></script>
+  
 </head>
 
 <body id="page-top" class="index">
@@ -88,7 +30,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-        <a class="navbar-brand page-scroll" href="#page-top">[ JG ] Development</a>
+        <a class="navbar-brand page-scroll" href="#page-top">[ Jose.Technology ]</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,10 +40,10 @@
             <a href="#page-top"></a>
           </li>
           <li>
-            <a class="page-scroll" href="#services">Services</a>
+            <a class="page-scroll" href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a class="page-scroll" href="#portfolio">Portfolio</a>
+            <a class="page-scroll" href="#services">Services</a>
           </li>
           <li>
             <a class="page-scroll" href="#about">About</a>
@@ -121,51 +63,13 @@
     <div class="container">
       <div class="intro-text">
         <div class="intro-heading">
-          <div class="typewrite" data-period="2000" data-type='[ "Hello, I am Jose.", "I love to code.", "I love to develop."]'>
+          <div class="typewrite" data-period="2000" data-type='["Hello, I am Jose!", "Lets shoot for the stars.", "I love to develop.", "I make cool things.", "Come see below!"]'>
             <span class="wrap"></span>
           </div>
         </div>
-        <!-- <a href="Resume.pdf" class="page-scroll btn btn-lg" download>Resumé</a> -->
-        <a href="#about" class="page-scroll btn btn-lg">About Me!</a>
       </div>
     </div>
   </header>
-
-  <!-- Services Section -->
-  <section id="services" class="bg-light-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Small Business Services</h2>
-          <h3 class="section-subheading text-muted">Talent without working hard is nothing. -Cristiano Ronaldo</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div id="service-hover" class="col-md-4">
-          <span class="icons">
-                        <i id="icon-size" class="glyphicon glyphicon-shopping-cart"></i>
-                    </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">I can help attract more visitors to your website so they can become buyers of your products and services. With a ecommerce solution geared towards turning your specific website into a sales machine.</p>
-        </div>
-        <div id="service-hover" class="col-md-4">
-          <span class="icons">
-                      <i id="icon-size" class="glyphicon glyphicon-comment"></i>
-                  </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Almost every new client these days wants a mobile version of their website. It’s practically essential after all since there are many different screen resolutions must be compatible. Just like the one you are viewing! I can work to make your
-            site have a responsive web design that will respond to the user’s behavior and environment based on screen size, platform and orientation.</p>
-        </div>
-        <div id="service-hover" class="col-md-4">
-          <span class="icons">
-                      <i id="icon-size" class="glyphicon glyphicon-download"></i>
-                  </span>
-          <h4 class="service-heading">Infographics</h4>
-          <p class="text-muted">When partnering for an infographic, I will find the perfect way to idea through the creation, and ongoing social media support to ensure your infographic reaches your target audience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Portfolio Grid Section -->
   <section id="portfolio">
@@ -264,6 +168,44 @@
       </div>
     </div>
   </section>
+  
+  <!-- Services Section -->
+  <section id="services" class="bg-light-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Small Business Services</h2>
+          <h3 class="section-subheading text-muted">Talent without working hard is nothing. -Cristiano Ronaldo</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div id="service-hover" class="col-md-4">
+          <span class="icons">
+                        <i id="icon-size" class="glyphicon glyphicon-shopping-cart"></i>
+                    </span>
+          <h4 class="service-heading">E-Commerce</h4>
+          <p class="text-muted">I can help attract more visitors to your website so they can become buyers of your products and services. With a ecommerce solution geared towards turning your specific website into a sales machine.</p>
+        </div>
+        <div id="service-hover" class="col-md-4">
+          <span class="icons">
+                      <i id="icon-size" class="glyphicon glyphicon-comment"></i>
+                  </span>
+          <h4 class="service-heading">Responsive Design</h4>
+          <p class="text-muted">Almost every new client these days wants a mobile version of their website. It’s practically essential after all since there are many different screen resolutions must be compatible. Just like the one you are viewing! I can work to make your
+            site have a responsive web design that will respond to the user’s behavior and environment based on screen size, platform and orientation.</p>
+        </div>
+        <div id="service-hover" class="col-md-4">
+          <span class="icons">
+                      <i id="icon-size" class="glyphicon glyphicon-download"></i>
+                  </span>
+          <h4 class="service-heading">Infographics</h4>
+          <p class="text-muted">When partnering for an infographic, I will find the perfect way to idea through the creation, and ongoing social media support to ensure your infographic reaches your target audience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <!-- About Section -->
   <section id="about" class="bg-light-gray">
