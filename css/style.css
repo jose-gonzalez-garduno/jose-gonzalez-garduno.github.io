@@ -160,7 +160,6 @@ fieldset[disabled] .btn-xl.active {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-custom .navbar-toggle {
-  background-color: #63C2F9;
   border-color: #63C2F9;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
@@ -250,7 +249,7 @@ header .intro-text .intro-heading {
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
-  margin-bottom: 20px;
+  height: 2em;
 }
 @media (min-width: 768px) {
   header .intro-text {
@@ -858,3 +857,6 @@ img:hover {
   from, to { border-color: transparent }
   50% { border-color: #63C2F9; }
 }
+
+
+/* Section for Technical skills */
