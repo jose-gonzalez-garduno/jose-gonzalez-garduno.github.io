@@ -1,3 +1,5 @@
+/* Jose A. Gonzalez-Garduno */
+/************ HTML changes ************/
 body {
   overflow-x: hidden;
   font-family: 'Raleway', sans-serif;
@@ -5,12 +7,10 @@ body {
 .text-muted {
   color: #777777;
 }
-
 p {
   font-size: 14px;
   line-height: 1.75;
 }
-
 h1,
 h2,
 h3,
@@ -24,11 +24,23 @@ h6 {
 .img-centered {
   margin: 0 auto;
 }
-
-.bg-light-gray{
-  background-color: #eeeeee;
+::-moz-selection {
+  text-shadow: none;
+  background: #63C2F9;
 }
+::selection {
+  text-shadow: none;
+  background: #63C2F9;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+/************ HTML changes end ************/
 
+/************ Navbar ************/
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
@@ -36,6 +48,12 @@ h6 {
 .navbar-custom .navbar-brand {
   color: #ffffff;
   font-family: 'Raleway', sans-serif;
+}
+
+/* Change active color of navbar list */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  color: #00acec;
+  background-color: transparent;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -53,9 +71,10 @@ h6 {
   color: white;
   font-size: 12px;
 }
+/* Change active color of navbar menu button */
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #63C2F9;
+  background-color: #222222;
 }
 .navbar-custom .nav li a {
   font-family: 'Raleway', sans-serif;
@@ -73,7 +92,6 @@ h6 {
   background-color: transparent;
   color: #63C2F9;
 }
-
 @media (min-width: 768px) {
   .navbar-custom {
     background-color: rgba(69, 69, 69, 0.42);
@@ -102,6 +120,9 @@ h6 {
     font-size: 1.5em;
   }
 }
+/************ Navbar end ************/
+
+/************ Header ************/
 header {
   background-image: url('../img/space_gif.gif');
   background-position: center center;
@@ -155,6 +176,29 @@ header .intro-text .intro-heading {
     margin-bottom: 50px;
   }
 }
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #63C2F9; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation:
+    typing 2.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #63C2F9; }
+}
+/************ Header end ************/
+
+/************ Section ************/
 section {
   padding: 100px 0;
 }
@@ -176,16 +220,13 @@ section h3.section-subheading {
     padding: 100px 0;
   }
 }
-.service-heading {
-  margin: 15px 0;
-  text-transform: none;
-}
 
-@media (min-width: 767px) {
-  #portfolio .portfolio-item {
-    margin: 0 0 30px;
-  }
+.bg-light-gray{
+  background-color: #eeeeee;
 }
+/************ Section end ************/
+
+/************ About section ************/
 .timeline {
   list-style: none;
   padding: 0;
@@ -353,54 +394,43 @@ section h3.section-subheading {
     padding: 0 100px 20px 20px;
   }
 }
-.team-member {
-  text-align: center;
-  margin-bottom: 50px;
+/*CSS Flip horizontal entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
 }
-.team-member img {
-  margin: 0 auto;
-  border: 7px solid white;
-}
-.team-member h4 {
-  margin-top: 25px;
-  margin-bottom: 0;
-  text-transform: none;
-}
-.team-member p {
-  margin-top: 0;
-}
-aside.clients img {
-  margin: 50px auto;
-}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+      transform: rotateY(180deg);
+  }
 
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
 
-.btn:focus,
-.btn:active,
-.btn.active,
-.btn:active:focus {
-  outline: none;
+  position: relative;
 }
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
 
-/* Modal stuff */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+/************ About section end ************/
 
-/* Modal end */
-
-::-moz-selection {
-  text-shadow: none;
-  background: #63C2F9;
-}
-::selection {
-  text-shadow: none;
-  background: #63C2F9;
-}
-img::selection {
-  background: transparent;
-}
-img::-moz-selection {
-  background: transparent;
-}
-
-/* Services Section */
+/************ Services section ************/
 .icons {
   background-color: #63C2F9;
   /*margin: 1px;*/
@@ -415,86 +445,13 @@ img::-moz-selection {
   box-shadow: 0px 3px 1px 4px #333;
   border-radius: 100%
 }
-
 #service-hover:hover {
   border-color: rgba(114, 163, 209, 0.93);
   border-radius: 20px;
 }
-/************************************* */
+/************ Services section end ************/
 
-/*CSS Flip horizontal*/
-/* entire container, keeps perspective */
-.flip-container {
-    perspective: 1000px;
-}
-    /* flip the pane when hovered */
-    .flip-container:hover .flipper, .flip-container.hover .flipper {
-        transform: rotateY(180deg);
-    }
-
-/* flip speed goes here */
-.flipper {
-    transition: 0.6s;
-    transform-style: preserve-3d;
-
-    position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-    backface-visibility: hidden;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-    z-index: 2;
-    /* for firefox 31 */
-    transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-    transform: rotateY(180deg);
-}
-
-
-/******************************************************************************/
-
-
-/* type writter effcect */
-
-.typewriter {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #63C2F9; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .10em; /* Adjust as needed */
-  animation:
-    typing 2.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #63C2F9; }
-}
-
-
-/* Contact Section */
-
-
-/* Footer */
+/************ Footer ************/
 .footer{
   color: #fff;
   bottom: 0;
@@ -502,3 +459,4 @@ img::-moz-selection {
   line-height: 60px;
   background-color: #222222
 }
+/************ Footer end ************/
