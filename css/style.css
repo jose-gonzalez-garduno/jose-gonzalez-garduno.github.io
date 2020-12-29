@@ -1,4 +1,4 @@
-/* Jose A. Gonzalez-Garduno */
+/* Author Jose A. Gonzalez-Garduno */
 /************ HTML changes ************/
 body {
   overflow-x: hidden;
@@ -10,6 +10,7 @@ body {
 p {
   font-size: 14px;
   line-height: 1.75;
+  color: black;
 }
 h1,
 h2,
@@ -213,7 +214,7 @@ section h3.section-subheading {
   text-transform: none;
   font-style: italic;
   font-weight: 400;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
 }
 @media (min-width: 768px) {
   section {
@@ -227,6 +228,20 @@ section h3.section-subheading {
 /************ Section end ************/
 
 /************ About section ************/
+.img-thumbnail{
+  margin-bottom: 15px;
+  border-color: #63C2F9;
+}
+.btn-learn-more{
+  color: #63C2F9;
+  border-color: #63C2F9;
+  background-color: transparent;
+}
+.btn-resume{
+  color: white;
+  background-color: #63C2F9;
+}
+
 .timeline {
   list-style: none;
   padding: 0;
