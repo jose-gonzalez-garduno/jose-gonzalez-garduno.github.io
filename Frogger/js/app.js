@@ -9,7 +9,7 @@ var Enemy = function(x, y) {
     this.y = y;
 
     //speed of enemies that are random
-    this.speed = Math.floor((Math.random() * 400) + 100);
+    this.speed = Math.floor((Math.random() * 400) + 200);
 };
 
 // Update the enemy's position, required method for game
@@ -117,6 +117,7 @@ var allEnemies = []; //creates an array of Enemies
 //this function will DISPLAY Enemies:
 (function displayEnemies() {
     //  allEnemies.push(new Enemy(0, 50));
+    // allEnemies.push(new Enemy(0, 478));
     allEnemies.push(new Enemy(0, 478));
     allEnemies.push(new Enemy(0, 312));
     allEnemies.push(new Enemy(0, 140));
